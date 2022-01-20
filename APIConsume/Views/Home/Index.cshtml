@@ -1,4 +1,4 @@
-﻿@model IEnumerable<Reservation>
+﻿@model IEnumerable<Quotes>
 @{Layout="_Layout"; ViewBag.Title = "All Reservations";}
  
 <h2>All Reservations</h2>
@@ -22,9 +22,9 @@
         {
             <tr>
                 <td>@r.Id</td>
-                <td>@r.Name</td>
-                <td>@r.StartLocation</td>
-                <td>@r.EndLocation</td>
+                <td>@r.Quote</td>
+                <td>@r.Author</td>
+                <td>@r.Series</td>
                 <td>
                     <a asp-action="UpdateReservationPatch" asp-route-id="@r.Id">
                         <img src="/icon/edit.png" />

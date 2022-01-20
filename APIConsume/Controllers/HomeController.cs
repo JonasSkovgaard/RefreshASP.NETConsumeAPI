@@ -16,13 +16,13 @@ namespace APIConsume.Controllers
         //Get all Reservations
         public async Task<IActionResult> Index()
         {
-            List<Reservation> reservationList = new List<Reservation>();
+            List<Quotes> reservationList = new List<Quotes>();
             using (var httpClient = new HttpClient())
             {
-                using (var response = await httpClient.GetAsync("https://localhost:44324/api/Reservation"))
+                using (var response = await httpClient.GetAsync("https://www.breakingbadapi.com/api/quotes"))
                 {
                     string apiResponse = await response.Content.ReadAsStringAsync();
-                    reservationList = JsonConvert.DeserializeObject<List<Reservation>>(apiResponse);
+                    reservationList = JsonConvert.DeserializeObject<List<Quotes>>(apiResponse);
                 }
             }
             return View(reservationList);
